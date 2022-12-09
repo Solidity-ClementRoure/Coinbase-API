@@ -1,5 +1,6 @@
 const express = require("express")
 const app = express()
+const https = require('https');
 require('dotenv').config()
 
 // CORS Policy
@@ -15,16 +16,19 @@ app.use((req, res, next) => {
 
 app.get('/crypto_list',(req,res) => {
 
-    const url = 'https://api.pro.coinbase.com/currencies'
+  var options = {
+    host: 'api.pro.coinbase.com',
+    path: '/currencies',
+    method: 'GET',
+    headers: { 'User-Agent': 'agent' }
+  };
 
-    fetch(url)
-    .then(res => res.json())
-    .then(out =>
-        console.log('Checkout this JSON! ', out))
-        res.status(201).json({
-            result: "OK"
-        })
-    .catch(err => { throw err });
+  https.request(options, function(response) {
+      response.pipe(res);
+    }).on('error', function(e) {
+      res.sendStatus(500);
+    })
+    .end();
 })
 
 /// POST ///
