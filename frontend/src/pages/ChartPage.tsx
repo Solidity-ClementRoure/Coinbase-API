@@ -161,9 +161,9 @@ function ChartPage (){
                     View
                 </button>
 
-                <button onClick={() => buyOrder()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                {/* <button onClick={() => buyOrder()} className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                     Buy
-                </button>
+                </button> */}
               </div>
               <Link to="/" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-20 absolute left-1/2 translate-x-40 bottom-2 z-50">
                 Back

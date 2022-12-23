@@ -255,6 +255,7 @@ app.post('/cancelOrder',(req,res) => {
 
 // https://pro.coinbase.com/profile/api
 // https://docs.cloud.coinbase.com/exchange/docs/authorization-and-authentication#signing-a-message
+// https://docs.cloud.coinbase.com/advanced-trade-api/reference/retailbrokerageapi_postorder  
 
 app.listen(4000, () => {
 console.log("App is listening to port 4000")
